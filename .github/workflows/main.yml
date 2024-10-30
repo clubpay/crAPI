@@ -1,0 +1,9 @@
+name: Trigger Semgrep Scan
+
+on:
+  workflow_dispatch:  # This will allow you to manually trigger the workflow
+
+jobs:
+  semgrep-scan:
+    uses: clubpay/secureflow/.github/workflows/sast.yml@main
+    
