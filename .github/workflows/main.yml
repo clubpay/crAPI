@@ -1,10 +1,10 @@
 name: Trigger Semgrep Scan
-env:
-  SAST_EXCLUDE_LIST: 'services'
 on:
   workflow_dispatch:  # This will allow you to manually trigger the workflow
 
 jobs:
   sast:
     uses: clubpay/secureflow/.github/workflows/sast.yml@main
+    with:
+      sast_exclude_list: 'services README.md'
     
