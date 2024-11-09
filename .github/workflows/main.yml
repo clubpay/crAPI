@@ -4,7 +4,7 @@ on:
 
 jobs:
   sast:
-    uses: clubpay/secureflow/.github/workflows/sast.yml@main
-    with:
-      sast_exclude_list: 'README.md postman_collections/crAPI.postman_collection.json'
+    uses: clubpay/secureflow/.github/workflows/sast.yml@Upload-SAST-to-DD
+    secrets: inherit
+      
     
