@@ -4,7 +4,6 @@ on:
 
 jobs:
   sast:
-    uses: clubpay/secureflow/.github/workflows/sast.yml@Upload-SAST-to-DD
-    secrets: inherit
+    uses: clubpay/secureflow/.github/workflows/sast.yml@Umain
       
     
