@@ -1,9 +1,9 @@
-name: Trigger Semgrep Scan
+name: Trigger SCA Scan
 on:
   workflow_dispatch:  # This will allow you to manually trigger the workflow
 
 jobs:
   sast:
-    uses: clubpay/secureflow/.github/workflows/sast.yml@main
+    uses: clubpay/secureflow/.github/workflows/sca.yml@fallback_to_import
       
     
