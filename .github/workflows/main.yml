@@ -5,6 +5,7 @@ on:
 jobs:
   sast:
     uses: clubpay/secureflow/.github/workflows/sast.yml@Authenticate_to_Teleport
+    secrets: inherit
   # sca:
   #   uses: clubpay/secureflow/.github/workflows/sca.yml@Authenticate_to_Teleport
 
