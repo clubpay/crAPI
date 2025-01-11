@@ -12,6 +12,3 @@ jobs:
   iac-scanning:
     uses: clubpay/secureflow/.github/workflows/iac-scanning.yml@Authenticate_to_Teleport
     secrets: inherit
-
-      
-    
