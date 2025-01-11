@@ -4,6 +4,6 @@ on:
 
 jobs:
   sast:
-    uses: clubpay/secureflow/.github/workflows/sca.yml@Test_Connection
+    uses: clubpay/secureflow/.github/workflows/sast.yml@Test_Connection
       
     
