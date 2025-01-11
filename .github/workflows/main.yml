@@ -4,6 +4,6 @@ on:
 
 jobs:
   sast:
-    uses: clubpay/secureflow/.github/workflows/sca.yml@fallback_to_import
+    uses: clubpay/secureflow/.github/workflows/sca.yml@Test_Connection
       
     
