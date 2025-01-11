@@ -1,4 +1,4 @@
-name: Trigger SCA Scan
+name: Trigger SAST Scan
 on:
   workflow_dispatch:  # This will allow you to manually trigger the workflow
 
