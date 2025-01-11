@@ -1,9 +1,12 @@
-name: Trigger SAST Scan
+name: Trigger Secure Flow
 on:
   workflow_dispatch:  # This will allow you to manually trigger the workflow
 
 jobs:
   sast:
-    uses: clubpay/secureflow/.github/workflows/sast.yml@Test_Connection
+    uses: clubpay/secureflow/.github/workflows/sast.yml@Authenticate_to_Teleport
+  sca:
+    uses: clubpay/secureflow/.github/workflows/sca.yml@Authenticate_to_Teleport
+
       
     
