@@ -1,6 +1,6 @@
 name: Trigger SecureFlow
 on:
-  push:  # This will trigger the workflow on every push to the repository
+  workflow_dispatch:  # This will allow you to manually trigger the workflow
 
 jobs:
   sast:
