@@ -4,7 +4,7 @@ on:
 
 jobs:
   sast:
-    uses: clubpay/secureflow/.github/workflows/sast.yml@main
+    uses: clubpay/secureflow/.github/workflows/sast.yml@auth_for_private
     secrets: inherit
     
   sca:
