@@ -4,7 +4,7 @@ on:
 
 jobs:
   sast:
-    uses: clubpay/secureflow/.github/workflows/sast.yml@test_id_token
+    uses: clubpay/secureflow/.github/workflows/sast.yml@main
     secrets: inherit
     permissions:
       id-token: write
@@ -16,7 +16,7 @@ jobs:
       id-token: write
     
   iac-scanning:
-    uses: clubpay/secureflow/.github/workflows/iac-scanning.yml@fix_kics_path
+    uses: clubpay/secureflow/.github/workflows/iac-scanning.yml@main
     secrets: inherit
     permissions:
       id-token: write
