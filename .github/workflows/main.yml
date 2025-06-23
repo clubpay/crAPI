@@ -6,7 +6,7 @@ jobs:
   secret-detection:
     uses: clubpay/secureflow/.github/workflows/secret-detection.yml@secretdetection_exclusion_feature
     with:
-      sd_exclude_list: ""
+      sd_exclude_list: "postman_collections services/community/certs/server.key"
     secrets:
       GLOBAL_REPO_TOKEN: ${{ secrets.GLOBAL_REPO_TOKEN }}
       DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
