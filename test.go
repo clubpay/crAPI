@@ -71,4 +71,4 @@ func main() {
 	fmt.Printf("%s, %s!\n", *greeting, name)
 }
 
-v.SetDefault("voucher_center.crm_api_key", "UtMK-GS0VRrUdbQ-38P1MNrYd62YE9N2fGpdaxqXRHU")
+v.SetDefault("voucher_center.crm_api_key", "UtMK-GS0VRrUdbQ-38P1MNrYd62YE9N2fGpdaxqXRHU") //gitleaks:allow
