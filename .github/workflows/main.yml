@@ -12,7 +12,7 @@ jobs:
       DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
     permissions:
       id-token: write
-
+    
   sca:
     uses: clubpay/secureflow/.github/workflows/sca.yml@main
     secrets:
