@@ -5,14 +5,12 @@ on:
 jobs:
   sast:
     uses: clubpay/secureflow/.github/workflows/sast.yml@main
-    with:
-      SAST_EXCLUDE_LIST: "community/certs/server.key README.md MyAwsomeDirectory stage.env"
     secrets:
       GLOBAL_REPO_TOKEN: ${{ secrets.GLOBAL_REPO_TOKEN }}
       DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
     permissions:
-      id-token: write
-    
+      id-token: write #This is essential for authentication to Teleport
+
   sca:
     uses: clubpay/secureflow/.github/workflows/sca.yml@main
     secrets:
@@ -31,8 +29,6 @@ jobs:
 
   secret-detection:
     uses: clubpay/secureflow/.github/workflows/secret-detection.yml@main
-    with:
-      SECRET_DETECTION_EXCLUDE_LIST: "services/community.go mock.go README.md AwsomeDirectory"
     secrets:
       GLOBAL_REPO_TOKEN: ${{ secrets.GLOBAL_REPO_TOKEN }}
       DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
