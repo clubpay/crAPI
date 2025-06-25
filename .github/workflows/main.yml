@@ -1,12 +1,38 @@
 name: Trigger SecureFlow
 on:
-  workflow_dispatch: # This will trigger the workflow on every push to the repository
+  push: # This will trigger the workflow on every push to the repository
 
 jobs:
-  secret-detection:
-    uses: clubpay/secureflow/.github/workflows/secret-detection.yml@secretdetection_exclusion_feature
+  sast:
+    uses: clubpay/secureflow/.github/workflows/sast.yml@main
     with:
-      SECRET_DETECTION_EXCLUDE_LIST: "services/community/certs/server.key README.md"
+      SAST_EXCLUDE_LIST: "community/certs/server.key README.md MyAwsomeDirectory stage.env"
+    secrets:
+      GLOBAL_REPO_TOKEN: ${{ secrets.GLOBAL_REPO_TOKEN }}
+      DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
+    permissions:
+      id-token: write
+
+  sca:
+    uses: clubpay/secureflow/.github/workflows/sca.yml@main
+    secrets:
+      GLOBAL_REPO_TOKEN: ${{ secrets.GLOBAL_REPO_TOKEN }}
+      DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
+    permissions:
+      id-token: write
+
+  iac-scanning:
+    uses: clubpay/secureflow/.github/workflows/iac-scanning.yml@main
+    secrets:
+      GLOBAL_REPO_TOKEN: ${{ secrets.GLOBAL_REPO_TOKEN }}
+      DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
+    permissions:
+      id-token: write
+
+  secret-detection:
+    uses: clubpay/secureflow/.github/workflows/secret-detection.yml@main
+    with:
+      SECRET_DETECTION_EXCLUDE_LIST: "services/community.go mock.go README.md AwsomeDirectory"
     secrets:
       GLOBAL_REPO_TOKEN: ${{ secrets.GLOBAL_REPO_TOKEN }}
       DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
