@@ -16,7 +16,7 @@ jobs:
   secret-detection:
     uses: clubpay/secureflow/.github/workflows/secret-detection.yml@rewrite_exclusion
     with:
-      SECRET_DETECTION_EXCLUDE_LIST: "**/images/ *_test.go !hello_test.go"
+      SECRET_DETECTION_EXCLUDE_LIST: "postman_collections/"
     secrets:
       GLOBAL_REPO_TOKEN: ${{ secrets.GLOBAL_REPO_TOKEN }}
       DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
