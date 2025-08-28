@@ -6,7 +6,7 @@ jobs:
   sast:
     uses: clubpay/secureflow/.github/workflows/sast.yml@rewrite_exclusion
     with:
-      SAST_EXCLUDE_LIST: "*_test.go docs/"
+      SAST_EXCLUDE_LIST: "**/images/"
     secrets:
       GLOBAL_REPO_TOKEN: ${{ secrets.GLOBAL_REPO_TOKEN }}
       DEFECTDOJO_TOKEN: ${{ secrets.DEFECTDOJO_TOKEN }}
