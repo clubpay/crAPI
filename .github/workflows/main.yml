@@ -12,7 +12,7 @@ jobs:
 #       id-token: write #This is essential for authentication to Teleport
 
   iac-scanning:
-    uses: clubpay/secureflow/.github/workflows/secret-detection.yml@main
+    uses: clubpay/secureflow/.github/workflows/iac-scanning.yml@main
     with:
       IAC_SCANNING_EXCLUDE_LIST: "**/docker-compose.yml !/deploy/docker/docker-compose.yml"
     secrets:
